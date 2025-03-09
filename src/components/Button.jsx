@@ -8,21 +8,25 @@ export default function Button(props) {
 
     return (
         <div className="content-box">
+
             {/* Al click il valore false cambia */}
-            <button className="btn" onClick={() => setIsOpen((current) => !current)}>
+            <button className="btn" onClick={props.onToggle}>
                 {props.titolo}
             </button>
 
-            {/* Condizione */}
-            {/* Se lo stato ritorna true... */}
-            {isOpen &&
-                // allora...
+            {/* Condizione  */}
+            {/* Se lo stato ritorna true...  */}
+            {props.isOpen &&
+
+                /* // allora... */
                 <div className="card" key={props.id}>
                     <h1>{props.titolo}</h1>
                     <p>{props.descrizione}</p>
-                </div>}
-        </div>
+                </div>
 
+            }
+
+        </div>
 
     );
 }
